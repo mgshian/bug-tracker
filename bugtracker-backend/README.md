@@ -34,12 +34,7 @@ Create a new bug report.
 
 **Request Body**
 ```json
-{
-    "title": "Bug Title",
-    "description": "Bug Description",
-    "status": "Open",
-    "priority": "Medium"
-}
+ 
 ```
 
 **Notes:**

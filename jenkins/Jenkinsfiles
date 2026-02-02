@@ -1,18 +1,15 @@
 pipeline {
-    agent {
-        docker {
-            image 'snaekeo/golang-junit:1.21'
-        }
-    }
+    agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
         stage('Unit Tests - Backend') {
+            agent {
+                docker {
+                    image 'snakee/golang-junit:1.21'
+                    reuseNode true
+                }
+            }
+
             steps {
                 dir('bugtracker-backend') {
                     sh 'go test -v ./...'
